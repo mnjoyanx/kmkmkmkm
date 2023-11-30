@@ -38,6 +38,7 @@ export default function Sidebar({ collapsed }) {
         >
             <div className="sidebar-logo-section">
                 <img src={logo} alt="logo" />
+                test
             </div>
 
             <div className="sidebar-menu">
