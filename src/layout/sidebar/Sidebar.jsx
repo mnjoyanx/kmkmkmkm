@@ -8,67 +8,70 @@ import { Layout, Menu } from "antd";
 import "./_Sidebar.scss";
 
 export default function Sidebar({ collapsed }) {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const location = useLocation();
+  const location = useLocation();
 
-    const [current, setCurrent] = useState("");
+  const [current, setCurrent] = useState("");
 
-    const onClickItem = (e) => {
-        setCurrent(e.key);
-        navigate(e.key);
-    };
+  const onClickItem = (e) => {
+    setCurrent(e.key);
+    navigate(e.key);
+  };
 
-    const logoutHandler = () => {
-        localStorage.removeItem("token");
-        navigate("/login");
-    };
+  const logoutHandler = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
-    useEffect(() => {
-        setCurrent(location.pathname);
-    }, []);
+  useEffect(() => {
+    // how to change git remote
+    // git remote -v
+    // git remote set-url origin
+    setCurrent(location.pathname);
+  }, []);
 
-    return (
-        <Layout.Sider
-            id="sidebar"
-            collapsible={null}
-            collapsed={collapsed}
-            collapsedWidth={80}
-            width={250}
-        >
-            <div className="sidebar-logo-section">
-                <img src={logo} alt="logo" />
-                test
-            </div>
+  return (
+    <Layout.Sider
+      id="sidebar"
+      collapsible={null}
+      collapsed={collapsed}
+      collapsedWidth={80}
+      width={250}
+    >
+      <div className="sidebar-logo-section">
+        <img src={logo} alt="logo" />
+        test
+      </div>
 
-            <div className="sidebar-menu">
-                <Menu
-                    mode="inline"
-                    selectedKeys={current}
-                    onClick={onClickItem}
-                    items={[
-                        {
-                            key: "/dashboard/table_2",
-                            label: "Table 2",
-                        },
-                    ]}
-                />
+      <div className="sidebar-menu">
+        <Menu
+          mode="inline"
+          selectedKeys={current}
+          onClick={onClickItem}
+          items={[
+            {
+              key: "/dashboard/table_2",
+              label: "Table 2",
+            },
+          ]}
+        />
 
-                <div className="logout-item">
-                    <Menu
-                        mode="inline"
-                        selectedKeys={current}
-                        onClick={logoutHandler}
-                        items={[
-                            {
-                                key: "/dashboard/logout",
-                                label: "Logout",
-                                icon: <LogoutOutlined />,
-                            },
-                        ]}
-                    />
-                </div>
-            </div>
-        </Layout.Sider>
-    );
+        <div className="logout-item">
+          <Menu
+            mode="inline"
+            selectedKeys={current}
+            onClick={logoutHandler}
+            items={[
+              {
+                key: "/dashboard/logout",
+                label: "Logout",
+                icon: <LogoutOutlined />,
+              },
+            ]}
+          />
+        </div>
+      </div>
+    </Layout.Sider>
+  );
 }
