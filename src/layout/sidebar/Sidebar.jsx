@@ -39,7 +39,7 @@ export default function Sidebar({ collapsed }) {
       collapsedWidth={80}
       width={250}
     >
-      sdv
+      sdvssss
       <div className="sidebar-logo-section">
         <img src={logo} alt="logo" />
         test
