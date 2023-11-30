@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LogoutOutlined } from "@ant-design/icons";
-import logo from "../../assets/images/logo.png";
 
 import { Layout, Menu } from "antd";
 
@@ -40,10 +39,7 @@ export default function Sidebar({ collapsed }) {
       width={250}
     >
       dvasvsdvsdv sdvssss
-      <div className="sidebar-logo-section">
-        <img src={logo} alt="logo" />
-        test
-      </div>
+      <div className="sidebar-logo-section">test</div>
       <div className="sidebar-menu">
         <Menu
           mode="inline"
