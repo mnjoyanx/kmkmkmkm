@@ -41,6 +41,7 @@ export default function Sidebar({ collapsed }) {
     >
       svsdv dvasvsdvsdv sdvssss
       <div className="sidebar-logo-section">
+        asasdv
         <img src={logo} alt="logo" />
         test
       </div>
