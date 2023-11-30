@@ -39,11 +39,11 @@ export default function Sidebar({ collapsed }) {
       collapsedWidth={80}
       width={250}
     >
+      sdv
       <div className="sidebar-logo-section">
         <img src={logo} alt="logo" />
         test
       </div>
-
       <div className="sidebar-menu">
         <Menu
           mode="inline"
